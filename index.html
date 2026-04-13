@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Play Roblox With Me Shaniel?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #4a0030, #8b0057, #c2185b, #ff69b4);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .stars { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+    .star { position:absolute; border-radius:50%; background:#ffb6c1; animation:twinkle 3s infinite alternate; }
+    @keyframes twinkle { from{opacity:.2;transform:scale(1)} to{opacity:1;transform:scale(1.5)} }
+
+    .container { position:relative; z-index:1; text-align:center; padding:20px; width:100%; }
+
+    .screen { display:none; animation:popIn .5s ease; }
+    .screen.active { display:block; }
+    @keyframes popIn { from{opacity:0;transform:scale(.8) translateY(30px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+    .card {
+      background: rgba(255,182,193,0.12);
+      backdrop-filter: blur(18px);
+      border: 2px solid rgba(255,182,193,0.35);
+      border-radius: 30px;
+      padding: 44px 38px;
+      max-width: 520px;
+      margin: 0 auto;
+      box-shadow: 0 0 70px rgba(255,20,147,0.45), inset 0 0 30px rgba(255,105,180,0.08);
+    }
+
+    .emoji { font-size:68px; margin-bottom:14px; display:block; animation:bounce 1.5s infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+
+    h1 { font-size:2.6rem; font-weight:900; color:#fff; text-shadow:0 0 25px rgba(255,105,180,1); line-height:1.15; margin-bottom:10px; }
+    h2 { font-size:1.8rem; font-weight:900; color:#fff; text-shadow:0 0 18px rgba(255,182,193,.9); margin-bottom:20px; }
+    p.sub { color:rgba(255,220,230,.8); font-size:1rem; margin-bottom:28px; line-height:1.6; }
+
+    .name { color:#ffb6c1; font-weight:900; font-style:italic; text-shadow:0 0 10px rgba(255,182,193,0.8); }
+
+    .btn-row { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .btn { padding:15px 36px; border:none; border-radius:50px; font-family:'Nunito',sans-serif; font-size:1.1rem; font-weight:900; cursor:pointer; transition:transform .15s, box-shadow .15s; }
+
+    .btn-yes {
+      background: linear-gradient(135deg,#ff69b4,#e91e8c);
+      color:#fff; box-shadow:0 6px 30px rgba(255,20,147,.6);
+    }
+    .btn-yes:hover { transform:scale(1.08); box-shadow:0 8px 40px rgba(255,20,147,.9); }
+    .btn-yes:active { transform:scale(.97); }
+
+    .btn-no {
+      background: linear-gradient(135deg,#c2185b,#ad1457);
+      color:#fff; box-shadow:0 6px 30px rgba(194,24,91,.5);
+    }
+    .btn-no:hover { transform:scale(1.08); }
+
+    .btn-only {
+      background: linear-gradient(135deg,#ff80ab,#f06292);
+      color:#fff; box-shadow:0 6px 30px rgba(240,98,146,.6);
+      padding:18px 50px; font-size:1.25rem;
+    }
+    .btn-only:hover { transform:scale(1.1); box-shadow:0 8px 40px rgba(240,98,146,.9); }
+
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:8px; }
+    .pick-btn {
+      padding:17px 10px; border:2px solid rgba(255,182,193,.3); border-radius:20px;
+      background:rgba(255,105,180,.1); color:#fff;
+      font-family:'Nunito',sans-serif; font-size:.92rem; font-weight:700;
+      cursor:pointer; transition:all .2s;
+      display:flex; flex-direction:column; align-items:center; gap:6px;
+    }
+    .pick-btn .gi { font-size:1.9rem; }
+    .pick-btn:hover {
+      background:linear-gradient(135deg,#ff69b4,#e91e8c);
+      border-color:transparent; transform:scale(1.05);
+      box-shadow:0 4px 20px rgba(255,20,147,.6);
+    }
+    .pick-btn.b:hover { background:linear-gradient(135deg,#f48fb1,#e91e8c); }
+    .pick-btn.c:hover { background:linear-gradient(135deg,#ff4081,#c51162); }
+
+    .summary {
+      background:rgba(255,105,180,.1); border-radius:16px; padding:22px; margin-top:20px;
+      text-align:left; color:rgba(255,230,235,.9); font-size:1rem; line-height:2.1;
+      border:1px solid rgba(255,182,193,.2);
+    }
+    .summary span { color:#ffb6c1; font-weight:900; }
+    .confetti-area { font-size:2.8rem; margin:18px 0; letter-spacing:8px; animation:spin 2.5s linear infinite; }
+    @keyframes spin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+  </style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<div class="container">
+
+  <!-- S1 -->
+  <div class="screen active" id="s1">
+    <div class="card">
+      <span class="emoji">👆</span>
+      <h1><span class="name">SHANIEL!</span></h1>
+      <h1 style="color:#ffb6c1;">yes, YOU!</h1>
+      <p class="sub">stop scrolling right now <span class="name">Shaniel</span> and look at me 😤</p>
+      <div class="btn-row">
+        <button class="btn btn-yes" onclick="goTo('s2')">okay WHAT 👁️👄👁️</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="screen" id="s2">
+    <div class="card">
+      <span class="emoji">🌙</span>
+      <h2><span class="name">Shaniel</span>, are you free tonight?</h2>
+      <p class="sub">and before you answer — think about our friendship 🙂</p>
+      <div class="btn-row">
+        <button class="btn btn-yes" onclick="goTo('s3')">✅ yes omg yes</button>
+        <button class="btn btn-no" onclick="goTo('s2no')">❌ no...</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2-NO -->
+  <div class="screen" id="s2no">
+    <div class="card">
+      <span class="emoji" style="animation:none; font-size:80px;">💀</span>
+      <h1 style="color:#ffb6c1;"><span class="name">Shaniel</span>... no??</h1>
+      <p class="sub" style="font-size:1.05rem; color:rgba(255,220,230,.9);">
+        that is so crazy of you to say to me<br/>
+        i genuinely cannot believe this <span class="name">Shaniel</span><br/>
+        we are going to have a whole conversation about this<br/><br/>
+        <strong style="color:#ffb6c1;">anyway.</strong> the CORRECT answer was:
+      </p>
+      <div class="btn-row">
+        <button class="btn btn-only" onclick="goTo('s3')">✅ okay FINE yes 😭</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="screen" id="s3">
+    <div class="card">
+      <span class="emoji">⏰</span>
+      <h2>okay <span class="name">Shaniel</span>, what time?</h2>
+      <p class="sub">be honest. i know you be on your phone till 3am anyway 💀</p>
+      <div class="grid2">
+        <button class="pick-btn b" onclick="setVal('time','after dinner 🍽️'); goTo('s4')"><span class="gi">🍽️</span>after dinner</button>
+        <button class="pick-btn b" onclick="setVal('time','7ish PM 🕖'); goTo('s4')"><span class="gi">🕖</span>7ish PM</button>
+        <button class="pick-btn b" onclick="setVal('time','8ish PM 🕗'); goTo('s4')"><span class="gi">🕗</span>8ish PM</button>
+        <button class="pick-btn b" onclick="setVal('time','9 PM grind mode 🔥'); goTo('s4')"><span class="gi">🔥</span>9 PM grind</button>
+        <button class="pick-btn b" onclick="setVal('time','late night only 🌃'); goTo('s4')"><span class="gi">🌃</span>late night only</button>
+        <button class="pick-btn b" onclick="setVal('time','RIGHT NOW drop everything 🚨'); goTo('s4')"><span class="gi">🚨</span>RIGHT NOW</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 -->
+  <div class="screen" id="s4">
+    <div class="card">
+      <span class="emoji">📶</span>
+      <h2>wifi check, <span class="name">Shaniel</span> 👀</h2>
+      <p class="sub">last time you were lagging so bad i thought you left the country 💀</p>
+      <div class="grid2">
+        <button class="pick-btn c" onclick="setVal('wifi','godlike, full bars 👑'); goTo('s5')"><span class="gi">👑</span>godlike wifi</button>
+        <button class="pick-btn c" onclick="setVal('wifi','pretty decent actually ✅'); goTo('s5')"><span class="gi">✅</span>pretty decent</button>
+        <button class="pick-btn c" onclick="setVal('wifi','mid but i\'ll survive 😐'); goTo('s5')"><span class="gi">😐</span>mid but ok</button>
+        <button class="pick-btn c" onclick="setVal('wifi','terrible, pls pray for me 🙏'); goTo('s5')"><span class="gi">🙏</span>terrible rip</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 -->
+  <div class="screen" id="s5">
+    <div class="card">
+      <span class="emoji">🍿</span>
+      <h2>snack situation <span class="name">Shaniel</span>?</h2>
+      <p class="sub">this is actually very critical information ngl</p>
+      <div class="grid2">
+        <button class="pick-btn" onclick="setVal('snacks','fully loaded 🍫'); goTo('s6')"><span class="gi">🍫</span>fully loaded</button>
+        <button class="pick-btn" onclick="setVal('snacks','already ate ngl 😅'); goTo('s6')"><span class="gi">😅</span>already ate ngl</button>
+        <button class="pick-btn" onclick="setVal('snacks','nothing. empty. sad. 💀'); goTo('s6')"><span class="gi">💀</span>nothing rip</button>
+        <button class="pick-btn" onclick="setVal('snacks','i am the snack 💅'); goTo('s6')"><span class="gi">💅</span>i AM the snack</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 -->
+  <div class="screen" id="s6">
+    <div class="card">
+      <span class="emoji">😤</span>
+      <h2>be honest <span class="name">Shaniel</span>...</h2>
+      <p class="sub">will you rage quit on me? and i mean for REAL not "no" then you're offline 10 mins later 🙂</p>
+      <div class="grid2">
+        <button class="pick-btn b" onclick="setVal('rage','never, i am calm 😇'); goTo('s7')"><span class="gi">😇</span>never, i'm chill</button>
+        <button class="pick-btn b" onclick="setVal('rage','maybe once but i\'ll come back'); goTo('s7')"><span class="gi">😬</span>maybe once lol</button>
+        <button class="pick-btn b" onclick="setVal('rage','probably. no promises 💀'); goTo('s7')"><span class="gi">💀</span>probably ngl</button>
+        <button class="pick-btn b" onclick="setVal('rage','i WILL rage and blame you 😡'); goTo('s7')"><span class="gi">😡</span>and i'll blame you</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- S7 -->
+  <div class="screen" id="s7">
+    <div class="card">
+      <span class="emoji">🎮</span>
+      <h2>last one <span class="name">Shaniel</span>!</h2>
+      <p class="sub">what are we playing tonight? choose wisely 👀</p>
+      <div class="grid2">
+        <button class="pick-btn c" onclick="setVal('game','Brookhaven 🏡'); goTo('sfinal')"><span class="gi">🏡</span>Brookhaven</button>
+        <button class="pick-btn c" onclick="setVal('game','Blox Fruits ⚔️'); goTo('sfinal')"><span class="gi">⚔️</span>Blox Fruits</button>
+        <button class="pick-btn c" onclick="setVal('game','Dress to Impress 👗'); goTo('sfinal')"><span class="gi">👗</span>Dress to Impress</button>
+        <button class="pick-btn c" onclick="setVal('game','Adopt Me! 🐣'); goTo('sfinal')"><span class="gi">🐣</span>Adopt Me!</button>
+        <button class="pick-btn c" onclick="setVal('game','Murder Mystery 🔪'); goTo('sfinal')"><span class="gi">🔪</span>Murder Mystery</button>
+        <button class="pick-btn c" onclick="setVal('game','your choice I trust you 🎲'); goTo('sfinal')"><span class="gi">🎲</span>surprise me!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL -->
+  <div class="screen" id="sfinal">
+    <div class="card">
+      <span class="emoji" style="animation:none; font-size:75px;">🕹️</span>
+      <h1>LET'S GOOO <span class="name">SHANIEL</span>!! 🎉</h1>
+      <p class="sub">it's locked in. no backing out now 💗</p>
+      <div class="confetti-area">💗🎊💗</div>
+      <div class="summary">
+        🕐 Time: <span id="r-time">—</span><br/>
+        📶 Wifi: <span id="r-wifi">—</span><br/>
+        🍿 Snacks: <span id="r-snacks">—</span><br/>
+        😤 Rage quit risk: <span id="r-rage">—</span><br/>
+        🎮 Game: <span id="r-game">—</span><br/>
+        <br/>
+        <span style="color:#ffb6c1;">💬 see you online <span class="name">Shaniel</span>. don't make me wait 😤</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 100; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const sz = Math.random() * 4 + 1;
+    const colors = ['#ffb6c1','#ff69b4','#fff0f5','#ffc0cb','#ff1493'];
+    s.style.cssText = `width:${sz}px;height:${sz}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s;background:${colors[Math.floor(Math.random()*colors.length)]};`;
+    starsEl.appendChild(s);
+  }
+  const ans = {};
+  function goTo(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+  function setVal(key, val) {
+    ans[key] = val;
+    if (key === 'game') {
+      document.getElementById('r-time').textContent   = ans.time   || '—';
+      document.getElementById('r-wifi').textContent   = ans.wifi   || '—';
+      document.getElementById('r-snacks').textContent = ans.snacks || '—';
+      document.getElementById('r-rage').textContent   = ans.rage   || '—';
+      document.getElementById('r-game').textContent   = ans.game   || '—';
+    }
+  }
+</script>
+</body>
+</html>
